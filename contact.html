@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact & Join — FAST Sports Guild</title>
+  <link rel="stylesheet" href="css/grid-style.css">
+</head>
+<body>
+  <div class="site-grid">
+
+    <header class="header-grid">
+      <div class="brand-grid">
+        <img src="images/logo.png" alt="FAST Sports Guild logo" class="logo-grid">
+        <div>
+          <h1>FAST Sports Guild</h1>
+          <p class="subtitle-grid">Contact & Join</p>
+        </div>
+      </div>
+
+      <nav class="nav-grid">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="teams.html">Teams</a>
+        <a href="events.html">Events</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </header>
+
+    <main class="main-grid contact-grid">
+      <section class="contact-info">
+        <h2>Contact Info</h2>
+        <!-- CHANGE: office phone -->
+        <p>Phone: <!-- CHANGE: phone number -->+92 51 111 000 000</p>
+        <!-- CHANGE: office email -->
+        <p>Email: <a href="mailto:sports@fastnuces.edu.pk">sports@fastnuces.edu.pk</a></p>
+        <!-- CHANGE: office address -->
+        <p>Address: G-6/2, Islamabad</p>
+      </section>
+
+      <section class="join-form">
+        <h2>Join the Guild</h2>
+        <!-- NOTE: forms are non-functional without backend; kept HTML-only as requested -->
+        <form action="#" method="post">
+          <label for="name">Name</label>
+          <!-- CHANGE: placeholder -->
+          <input id="name" name="name" type="text" placeholder="Your full name" required>
+
+          <label for="reg">FAST Reg. No.</label>
+          <!-- CHANGE: placeholder -->
+          <input id="reg" name="regno" type="text" placeholder="Registration number" required>
+
+          <label for="program">Program</label>
+          <!-- CHANGE: options -->
+          <input id="program" name="program" type="text" placeholder="e.g., BS Computer Science" required>
+
+          <label for="sport">Sport of Interest</label>
+          <!-- CHANGE: placeholder -->
+          <input id="sport" name="sport" type="text" placeholder="e.g., Football, Cricket" required>
+
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="message" rows="4" placeholder="Why do you want to join?"></textarea>
+
+          <button type="submit" class="btn">Submit Application</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer-grid">
+      <div>FAST NUCES Islamabad — Sports Guild</div>
+      <div>Follow us on social media: <!-- CHANGE: add social links --><a href="#">Instagram</a> | <a href="#">Facebook</a></div>
+    </footer>
+  </div>
+</body>
+</html>
