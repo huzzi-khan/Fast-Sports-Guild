@@ -3,14 +3,20 @@
    Good practices: CSS variables, semantic class names, responsive breakpoints
 */
 
-/* CHANGE: adjust brand colors if needed */
+/* Enhanced brand colors for FAST Sports Guild */
 :root{
-    --primary: #0b4d91;   /* PRIMARY color - CHANGE */
-    --accent:  #f2b705;   /* ACCENT color - CHANGE */
-    --bg:      #ffffff;
-    --muted:   #6b7280;
+    --primary: #1e40af;   /* Deep blue - FAST brand color */
+    --accent:  #f59e0b;   /* Golden yellow - sports energy */
+    --secondary: #dc2626; /* Red - team spirit */
+    --success: #059669;   /* Green - victory */
+    --bg:      #f8fafc;   /* Light gray background */
+    --card-bg: #ffffff;   /* White cards */
+    --muted:   #64748b;   /* Muted text */
+    --border:  #e2e8f0;   /* Light borders */
     --maxw:    1100px;
     --gap:     1rem;
+    --shadow:  0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
   
   *{ box-sizing: border-box; }
@@ -27,7 +33,9 @@
     align-items:center;
     justify-content:space-between;
     padding:1rem;
-    border-bottom:1px solid #eee;
+    border-bottom:2px solid var(--border);
+    background: var(--card-bg);
+    box-shadow: var(--shadow);
   }
   .logo{ width:54px; height:auto; margin-right:.75rem; }
   .brand h1{ margin:0; color:var(--primary); font-size:1.1rem; }
@@ -35,8 +43,8 @@
   
   /* NAV */
   .nav{ display:flex; gap:1rem; }
-  .nav a{ text-decoration:none; color:inherit; padding:.25rem .5rem; border-radius:4px; }
-  .nav a.active, .nav a:hover{ background:rgba(11,77,145,0.08); color:var(--primary); }
+  .nav a{ text-decoration:none; color:inherit; padding:.5rem 1rem; border-radius:8px; transition: all 0.2s ease; }
+  .nav a.active, .nav a:hover{ background:var(--primary); color:white; transform: translateY(-1px); }
   
   /* MAIN */
   .main{ width:100%; max-width:var(--maxw); padding:1rem; display:flex; flex-direction:column; gap:1.25rem; }
@@ -67,14 +75,21 @@
   .team-cards{ display:flex; gap:1rem; flex-wrap:wrap; }
   .team-card{
     flex:1 1 300px;
-    border:1px solid #eee;
-    border-radius:8px;
+    border:1px solid var(--border);
+    border-radius:12px;
     overflow:hidden;
     display:flex;
     gap:0;
-    background:white;
+    background:var(--card-bg);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
   }
-  .team-card img{ width:40%; object-fit:cover; }
+  .team-card:hover{
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+  }
+  .team-card img{ width:40%; height:150px; object-fit:cover; }
   .team-info{ padding:0.75rem; display:flex; flex-direction:column; justify-content:center; }
   
   /* FOOTER */
@@ -82,7 +97,8 @@
   
   /* small helpers */
   .section-title{ padding: 0.5rem 0; }
-  .small-link{ color:var(--primary); text-decoration:none; font-size:.95rem; }
+  .small-link{ color:var(--primary); text-decoration:none; font-size:.95rem; transition: color 0.2s ease; }
+  .small-link:hover{ color:var(--accent); }
   
   /* RESPONSIVE (desktop-first fallback) */
   @media (max-width:1000px){

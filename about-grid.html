@@ -3,34 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — FAST Sports Guild</title>
-  <link rel="stylesheet" href="css/flex-style.css">
+  <title>About — FAST Sports Guild (Grid Layout)</title>
+  <link rel="stylesheet" href="css/grid-style.css">
 </head>
 <body>
-  <div class="site">
-
-    <header class="header">
-      <img src="images/logo.jpg" alt="FAST Sports Guild logo" class="logo">
-      <div class="brand">
-        <h1>FAST Sports Guild</h1>
-        <p class="subtitle">About Us</p>
+  <div class="site-grid">
+    <!-- HEADER GRID -->
+    <header class="header-grid">
+      <div class="brand-grid">
+        <img src="images/logo.jpg" alt="FAST Sports Guild logo" class="logo-grid">
+        <div>
+          <h1>FAST Sports Guild</h1>
+          <p class="subtitle-grid">About Us</p>
+        </div>
       </div>
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="teams.html">Teams</a>
+      <nav class="nav-grid">
+        <a href="index-grid.html">Home</a>
+        <a href="about-grid.html" class="active">About</a>
+        <a href="teams-grid.html">Teams</a>
         <a href="events.html">Events</a>
         <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
 
-    <main class="main">
-      <!-- ABOUT HERO -->
-      <section class="hero about-hero">
-        <div class="hero-left">
+    <!-- MAIN GRID LAYOUT -->
+    <main class="main-grid about-main-grid">
+      <!-- ABOUT HERO - Grid Layout -->
+      <section class="about-hero-grid">
+        <div class="about-content">
           <h2>Our Mission & History</h2>
-          <!-- CHANGE: mission paragraph -->
           <p>Founded to encourage student participation in sports, FAST Sports Guild promotes discipline, fitness and teamwork among students. We organize the annual Battle of Batches (BOB) futsal tournament, our flagship event.</p>
           <h3>Objectives</h3>
           <ul>
@@ -40,42 +42,35 @@
             <li>Develop leadership through sport</li>
           </ul>
         </div>
-        <div class="hero-right">
+        <div class="about-image">
           <img src="images/mission.jpg" alt="FAST Sports Guild Mission - Futsal Match">
         </div>
       </section>
 
-      <!-- COMMITTEE (Flex cards) -->
-      <section class="cards">
-        <article class="card">
+      <!-- COMMITTEE CARDS - Grid Layout -->
+      <section class="committee-grid">
+        <article class="committee-card">
           <h3>President</h3>
-          <!-- CHANGE: name -->
           <p>Jane Doe — Student President</p>
         </article>
 
-        <article class="card">
+        <article class="committee-card">
           <h3>Secretary</h3>
-          <!-- CHANGE: name -->
           <p>Ali Khan — Secretary</p>
         </article>
 
-        <article class="card">
+        <article class="committee-card">
           <h3>Coach</h3>
-          <!-- CHANGE: name -->
           <p>Coach Ahmed — Head Coach</p>
         </article>
       </section>
     </main>
 
-    <footer class="footer">
-      <div>
-        <p>FAST NUCES Islamabad — Sports Guild</p>
-      </div>
-      <div>
-        <p>Address: <!-- CHANGE: campus address -->G-6/2, Islamabad</p>
-      </div>
+    <!-- FOOTER GRID -->
+    <footer class="footer-grid">
+      <div>FAST NUCES Islamabad — Sports Guild</div>
+      <div>Address: G-6/2, Islamabad</div>
     </footer>
-
   </div>
 </body>
 </html>

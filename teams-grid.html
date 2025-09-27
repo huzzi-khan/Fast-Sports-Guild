@@ -1,41 +1,46 @@
-<!-- Teams -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Teams — FAST Sports Guild</title>
-  <link rel="stylesheet" href="css/flex-style.css">
+  <title>Teams — FAST Sports Guild (Grid Layout)</title>
+  <link rel="stylesheet" href="css/grid-style.css">
 </head>
 <body>
-  <div class="site">
-
-    <header class="header">
-      <img src="images/logo.jpg" alt="FAST Sports Guild logo" class="logo">
-      <div class="brand">
-        <h1>FAST Sports Guild</h1>
-        <p class="subtitle">Teams</p>
+  <div class="site-grid">
+    <!-- HEADER GRID -->
+    <header class="header-grid">
+      <div class="brand-grid">
+        <img src="images/logo.jpg" alt="FAST Sports Guild logo" class="logo-grid">
+        <div>
+          <h1>FAST Sports Guild</h1>
+          <p class="subtitle-grid">Teams</p>
+        </div>
       </div>
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="teams.html" class="active">Teams</a>
+      <nav class="nav-grid">
+        <a href="index-grid.html">Home</a>
+        <a href="about-grid.html">About</a>
+        <a href="teams-grid.html" class="active">Teams</a>
         <a href="events.html">Events</a>
         <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
 
-    <main class="main">
-      <section class="section-title">
+    <!-- MAIN GRID LAYOUT -->
+    <main class="main-grid teams-main-grid">
+      <!-- SECTION TITLE -->
+      <section class="section-title-grid">
         <h2>Our Teams</h2>
         <p>We have a range of sports teams. Click a team for details.</p>
       </section>
 
-      <!-- TEAM CARDS (flex-wrap layout) -->
-      <section class="team-cards">
-        <article class="team-card">
-          <img src="images/cricket.jpg" alt="FAST Cricket Team">
+      <!-- TEAM CARDS - Grid Layout -->
+      <section class="teams-grid">
+        <article class="team-card-grid">
+          <div class="team-image">
+            <img src="images/cricket.jpg" alt="FAST Cricket Team">
+          </div>
           <div class="team-info">
             <h3>Cricket</h3>
             <p>Captain: Ahmed</p>
@@ -43,8 +48,10 @@
           </div>
         </article>
 
-        <article class="team-card">
-          <img src="images/bobwinner.jpg" alt="BOB 2024 Winners - REVENANT FC">
+        <article class="team-card-grid">
+          <div class="team-image">
+            <img src="images/bobwinner.jpg" alt="BOB 2024 Winners - REVENANT FC">
+          </div>
           <div class="team-info">
             <h3>Football (Futsal)</h3>
             <p>BOB 2024 Winners: REVENANT FC</p>
@@ -53,8 +60,10 @@
           </div>
         </article>
 
-        <article class="team-card">
-          <img src="images/badminton.jpg" alt="FAST Girls Badminton Team 23-24">
+        <article class="team-card-grid">
+          <div class="team-image">
+            <img src="images/badminton.jpg" alt="FAST Girls Badminton Team 23-24">
+          </div>
           <div class="team-info">
             <h3>Badminton</h3>
             <p>Girls Badminton Team 23-24 🏸</p>
@@ -63,8 +72,10 @@
           </div>
         </article>
 
-        <article class="team-card">
-          <img src="images/volleyball.jpg" alt="FAST Girls Volleyball Team - NCA Khel Tamasha Champions">
+        <article class="team-card-grid">
+          <div class="team-image">
+            <img src="images/volleyball.jpg" alt="FAST Girls Volleyball Team - NCA Khel Tamasha Champions">
+          </div>
           <div class="team-info">
             <h3>Women's Volleyball</h3>
             <p>NCA Khel Tamasha Champions 2024</p>
@@ -74,8 +85,10 @@
           </div>
         </article>
 
-        <article class="team-card">
-          <img src="images/volleyballmen.jpg" alt="FAST Men's Volleyball Team">
+        <article class="team-card-grid">
+          <div class="team-image">
+            <img src="images/volleyballmen.jpg" alt="FAST Men's Volleyball Team">
+          </div>
           <div class="team-info">
             <h3>Men's Volleyball</h3>
             <p>Victory over NUST - 3 consecutive sets 🏆</p>
@@ -84,8 +97,10 @@
           </div>
         </article>
 
-        <article class="team-card">
-          <img src="images/rugby.jpg" alt="FAST Rugby Team - HEC Tournament">
+        <article class="team-card-grid">
+          <div class="team-image">
+            <img src="images/rugby.jpg" alt="FAST Rugby Team - HEC Tournament">
+          </div>
           <div class="team-info">
             <h3>Rugby</h3>
             <p>HEC Tournament - Brilliant Performance</p>
@@ -95,8 +110,10 @@
           </div>
         </article>
 
-        <article class="team-card">
-          <img src="images/basketball.jpg" alt="FAST Girls Basketball Team - NCA Tournament 23 Champions">
+        <article class="team-card-grid">
+          <div class="team-image">
+            <img src="images/basketball.jpg" alt="FAST Girls Basketball Team - NCA Tournament 23 Champions">
+          </div>
           <div class="team-info">
             <h3>Basketball</h3>
             <p>NCA Tournament '23 Champions 🏆</p>
@@ -107,15 +124,11 @@
       </section>
     </main>
 
-    <footer class="footer">
-      <div>
-        <p>FAST NUCES Islamabad — Sports Guild</p>
-      </div>
-      <div>
-        <p>Contact: <a href="mailto:sports@fastnuces.edu.pk">sports@fastnuces.edu.pk</a></p>
-      </div>
+    <!-- FOOTER GRID -->
+    <footer class="footer-grid">
+      <div>FAST NUCES Islamabad — Sports Guild</div>
+      <div>Contact: <a href="mailto:sports@fastnuces.edu.pk">sports@fastnuces.edu.pk</a></div>
     </footer>
-
   </div>
 </body>
 </html>
