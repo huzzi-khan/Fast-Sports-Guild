@@ -11,7 +11,7 @@
 
     <header class="header-grid">
       <div class="brand-grid">
-        <img src="images/logo.png" alt="FAST Sports Guild logo" class="logo-grid">
+        <img src="images/logo.jpg" alt="FAST Sports Guild logo" class="logo-grid">
         <div>
           <h1>FAST Sports Guild</h1>
           <p class="subtitle-grid">Gallery</p>
@@ -29,30 +29,128 @@
     </header>
 
     <main class="main-grid gallery-main">
-      <h2>Event Photos</h2>
+      <div class="gallery-header">
+        <h2>Event Photos</h2>
+        <div class="gallery-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="matches">Matches</button>
+          <button class="filter-btn" data-filter="teams">Teams</button>
+          <button class="filter-btn" data-filter="training">Training</button>
+        </div>
+      </div>
 
-      <!-- GRID OF IMAGES -->
+      <!-- ENHANCED GRID OF IMAGES -->
       <section class="photo-grid">
-        <figure class="photo">
-          <!-- CHANGE: image path/alt text -->
-          <img src="images/gallery1.jpg" alt="Match photo 1">
+        <figure class="photo" data-category="matches">
+          <div class="photo-container">
+            <img src="images/cup.jpg" alt="Inter-university Cup">
+            <div class="photo-overlay">
+              <span class="photo-date">2025</span>
+            </div>
+          </div>
           <figcaption>Inter-university Cup — 2025</figcaption>
         </figure>
 
-        <figure class="photo">
-          <img src="images/team1.jpg" alt="Team photo 2">
-          <figcaption>Cricket Team — Champions</figcaption>
+        <figure class="photo" data-category="teams">
+          <div class="photo-container">
+            <img src="images/cricket.jpg" alt="FAST Cricket Team">
+            <div class="photo-overlay">
+              <span class="photo-date">2024</span>
+            </div>
+          </div>
+          <figcaption>FAST Cricket Team — Captain: Ahmed</figcaption>
         </figure>
 
-        <figure class="photo">
-          <img src="images/team2.jpg" alt="Action shot">
+        <figure class="photo" data-category="teams">
+          <div class="photo-container">
+            <img src="images/rugby.jpg" alt="FAST Rugby Team - HEC Tournament">
+            <div class="photo-overlay">
+              <span class="photo-date">2024</span>
+            </div>
+          </div>
+          <figcaption>FAST Rugby Team — HEC Tournament Performance</figcaption>
+        </figure>
+
+        <figure class="photo" data-category="matches">
+          <div class="photo-container">
+            <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=200&h=150&fit=crop&crop=center" alt="Action shot">
+            <div class="photo-overlay">
+              <span class="photo-date">Oct 2025</span>
+            </div>
+          </div>
           <figcaption>Football Friendly</figcaption>
         </figure>
 
-        <figure class="photo">
-          <img src="images/hero.jpg" alt="Gym training">
-          <figcaption>Training Session</figcaption>
+        <figure class="photo" data-category="training">
+          <div class="photo-container">
+            <img src="images/training.jpg" alt="FAST Sports Training Session">
+            <div class="photo-overlay">
+              <span class="photo-date">2024</span>
+            </div>
+          </div>
+          <figcaption>FAST Sports Training Session — Weekly Practice</figcaption>
         </figure>
+
+        <figure class="photo" data-category="teams">
+          <div class="photo-container">
+            <img src="images/badminton.jpg" alt="FAST Girls Badminton Team 23-24">
+            <div class="photo-overlay">
+              <span class="photo-date">2023-24</span>
+            </div>
+          </div>
+          <figcaption>FAST Girls Badminton Team 23-24 — Captain: Noor ul Hudda 🏸</figcaption>
+        </figure>
+
+        <figure class="photo" data-category="matches">
+          <div class="photo-container">
+            <img src="images/bobwinner.jpg" alt="BOB 2024 Winners - REVENANT FC">
+            <div class="photo-overlay">
+              <span class="photo-date">2024</span>
+            </div>
+          </div>
+          <figcaption>BOB 2024 Winners - REVENANT FC</figcaption>
+        </figure>
+
+        <figure class="photo" data-category="matches">
+          <div class="photo-container">
+            <img src="images/bobrunnerup.jpg" alt="BOB 2024 Runners-up - CHANNA FC">
+            <div class="photo-overlay">
+              <span class="photo-date">2024</span>
+            </div>
+          </div>
+          <figcaption>BOB 2024 Runners-up - CHANNA FC</figcaption>
+        </figure>
+
+        <figure class="photo" data-category="teams">
+          <div class="photo-container">
+            <img src="images/volleyball.jpg" alt="FAST Girls Volleyball Team - NCA Khel Tamasha Champions">
+            <div class="photo-overlay">
+              <span class="photo-date">2024</span>
+            </div>
+          </div>
+          <figcaption>FAST Girls Volleyball Team — NCA Khel Tamasha Champions</figcaption>
+        </figure>
+
+        <figure class="photo" data-category="matches">
+          <div class="photo-container">
+            <img src="images/vsnust.jpg" alt="FAST vs NUST Match">
+            <div class="photo-overlay">
+              <span class="photo-date">2024</span>
+            </div>
+          </div>
+          <figcaption>FAST vs NUST — Victory Celebration</figcaption>
+        </figure>
+
+        <figure class="photo" data-category="teams">
+          <div class="photo-container">
+            <img src="images/basketball.jpg" alt="FAST Girls Basketball Team - NCA Tournament 23 Champions">
+            <div class="photo-overlay">
+              <span class="photo-date">2023</span>
+            </div>
+          </div>
+          <figcaption>FAST Girls Basketball Team — NCA Tournament '23 Champions 🏆</figcaption>
+        </figure>
+
       </section>
     </main>
 

@@ -11,7 +11,7 @@
 
     <header class="header-grid">
       <div class="brand-grid">
-        <img src="images/logo.png" alt="FAST Sports Guild logo" class="logo-grid">
+        <img src="images/logo.jpg" alt="FAST Sports Guild logo" class="logo-grid">
         <div>
           <h1>FAST Sports Guild</h1>
           <p class="subtitle-grid">Contact & Join</p>
@@ -28,41 +28,84 @@
       </nav>
     </header>
 
-    <main class="main-grid contact-grid">
+    <main class="main-grid contact-main-grid">
       <section class="contact-info">
         <h2>Contact Info</h2>
-        <!-- CHANGE: office phone -->
-        <p>Phone: <!-- CHANGE: phone number -->+92 51 111 000 000</p>
-        <!-- CHANGE: office email -->
-        <p>Email: <a href="mailto:sports@fastnuces.edu.pk">sports@fastnuces.edu.pk</a></p>
-        <!-- CHANGE: office address -->
-        <p>Address: G-6/2, Islamabad</p>
+        <div class="contact-details-grid">
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-content">
+              <h3>Phone</h3>
+              <p>+92 51 111 000 000</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-content">
+              <h3>Email</h3>
+              <p><a href="mailto:sports@fastnuces.edu.pk">sports@fastnuces.edu.pk</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-content">
+              <h3>Address</h3>
+              <p>G-6/2, Islamabad</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">🕒</div>
+            <div class="contact-content">
+              <h3>Office Hours</h3>
+              <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="join-form">
         <h2>Join the Guild</h2>
-        <!-- NOTE: forms are non-functional without backend; kept HTML-only as requested -->
-        <form action="#" method="post">
-          <label for="name">Name</label>
-          <!-- CHANGE: placeholder -->
-          <input id="name" name="name" type="text" placeholder="Your full name" required>
+        <form action="#" method="post" class="form-grid">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your full name" required>
+          </div>
 
-          <label for="reg">FAST Reg. No.</label>
-          <!-- CHANGE: placeholder -->
-          <input id="reg" name="regno" type="text" placeholder="Registration number" required>
+          <div class="form-row">
+            <label for="reg">FAST Reg. No.</label>
+            <input id="reg" name="regno" type="text" placeholder="Registration number" required>
+          </div>
 
-          <label for="program">Program</label>
-          <!-- CHANGE: options -->
-          <input id="program" name="program" type="text" placeholder="e.g., BS Computer Science" required>
+          <div class="form-row">
+            <label for="program">Program</label>
+            <input id="program" name="program" type="text" placeholder="e.g., BS Computer Science" required>
+          </div>
 
-          <label for="sport">Sport of Interest</label>
-          <!-- CHANGE: placeholder -->
-          <input id="sport" name="sport" type="text" placeholder="e.g., Football, Cricket" required>
+          <div class="form-row">
+            <label for="sport">Sport of Interest</label>
+            <select id="sport" name="sport" required>
+              <option value="">Select a sport</option>
+              <option value="cricket">Cricket</option>
+              <option value="football">Football</option>
+              <option value="badminton">Badminton</option>
+              <option value="volleyball">Volleyball</option>
+              <option value="rugby">Rugby</option>
+              <option value="basketball">Basketball</option>
+              <option value="table-tennis">Table Tennis</option>
+            </select>
+          </div>
 
-          <label for="message">Message (optional)</label>
-          <textarea id="message" name="message" rows="4" placeholder="Why do you want to join?"></textarea>
+          <div class="form-row full-width">
+            <label for="message">Message (optional)</label>
+            <textarea id="message" name="message" rows="4" placeholder="Why do you want to join?"></textarea>
+          </div>
 
-          <button type="submit" class="btn">Submit Application</button>
+          <div class="form-row full-width">
+            <button type="submit" class="btn">Submit Application</button>
+          </div>
         </form>
       </section>
     </main>

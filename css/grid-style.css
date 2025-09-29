@@ -1,83 +1,518 @@
 /* grid-style.css
-   Pure CSS Grid layout styles used by events.html, gallery.html, contact.html
-   Major layout areas are implemented using grid-template; no display:flex as page layout
+   Enhanced CSS Grid layout styles with advanced Grid features
+   Used by all grid-based pages: events.html, gallery.html, contact.html, 
+   index-grid.html, about-grid.html, teams-grid.html
+   Demonstrates: grid-template-areas, grid-gap, grid-auto-flow, etc.
 */
 
-/* CHANGE: color variables */
+/* Enhanced brand colors for FAST Sports Guild */
 :root{
-    --primary: #0b4d91;  /* CHANGE */
-    --accent:  #f2b705;  /* CHANGE */
-    --bg:      #ffffff;
-    --muted:   #6b7280;
+    --primary: #1e40af;   /* Deep blue - FAST brand color */
+    --accent:  #f59e0b;   /* Golden yellow - sports energy */
+    --secondary: #dc2626; /* Red - team spirit */
+    --success: #059669;   /* Green - victory */
+    --bg:      #f8fafc;   /* Light gray background */
+    --card-bg: #ffffff;   /* White cards */
+    --muted:   #64748b;   /* Muted text */
+    --border:  #e2e8f0;   /* Light borders */
     --maxw:    1100px;
     --gap:     1rem;
+    --shadow:  0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
   
   *{ box-sizing:border-box; }
   html,body{ margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; color:#111; background:var(--bg); }
   
-  /* SITE WRAPPER (grid) */
-  .site-grid{ display:grid; grid-template-rows: auto 1fr auto; min-height:100vh; justify-items:center; }
+  /* SITE WRAPPER - Advanced Grid with template areas */
+  .site-grid{ 
+    display:grid; 
+    grid-template-areas: 
+      "header"
+      "main"
+      "footer";
+    grid-template-rows: auto 1fr auto; 
+    min-height:100vh; 
+    justify-items:center; 
+  }
   
-  /* HEADER GRID */
+  /* HEADER GRID - Advanced Grid Layout */
   .header-grid{
+    grid-area: header;
     width:100%;
     max-width:var(--maxw);
     display:grid;
     grid-template-columns: 1fr auto; /* left: brand, right: nav */
     align-items:center;
     padding:1rem;
-    border-bottom:1px solid #eee;
+    border-bottom:2px solid var(--border);
+    background: var(--card-bg);
+    box-shadow: var(--shadow);
     gap:1rem;
   }
-  .brand-grid{ display:grid; grid-auto-flow:column; align-items:center; gap:.75rem; }
+  .brand-grid{ 
+    display:grid; 
+    grid-auto-flow:column; 
+    align-items:center; 
+    gap:.75rem; 
+  }
   .logo-grid{ width:54px; height:auto; }
   
-  /* NAV - inline links (not a grid layout for simplicity) */
-  .nav-grid{ justify-self:end; }
-  .nav-grid a{ margin-left:1rem; text-decoration:none; color:inherit; padding:.25rem .5rem; border-radius:4px; }
-  .nav-grid a.active, .nav-grid a:hover{ background:rgba(11,77,145,0.08); color:var(--primary); }
-  
-  /* MAIN GRID (2-column) */
-  .main-grid{
-    width:100%;
-    max-width:var(--maxw);
-    padding:1rem;
+  /* NAV - Grid-based navigation */
+  .nav-grid{ 
+    justify-self:end; 
     display:grid;
-    grid-template-columns: 2fr 1fr; /* CHANGE: adjust columns if needed */
-    gap:1.5rem;
-  }
-  
-  /* EVENTS LIST and SIDEBAR are grid items */
-  .events-list{ background:transparent; }
-  .events-list .event{ border-bottom:1px dashed #eee; padding:0.75rem 0; }
-  .sidebar{ background:#fafafa; padding:1rem; border-radius:8px; }
-  
-  /* GALLERY - use grid for photos */
-  .gallery-main .photo-grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* responsive grid */
+    grid-auto-flow:column;
     gap:1rem;
   }
-  .photo img{ width:100%; height:180px; object-fit:cover; border-radius:6px; display:block; }
+  .nav-grid a{ 
+    text-decoration:none; 
+    color:inherit; 
+    padding:.25rem .5rem; 
+    border-radius:4px; 
+  }
+  .nav-grid a.active, .nav-grid a:hover{ 
+    background:rgba(11,77,145,0.08); 
+    color:var(--primary); 
+  }
   
-  /* CONTACT GRID - arrange contact + form columns */
-  .contact-grid{
+  /* MAIN GRID - Flexible grid layouts */
+  .main-grid{
+    grid-area: main;
     width:100%;
     max-width:var(--maxw);
     padding:1rem;
     display:grid;
-    grid-template-columns: 1fr 1fr;
     gap:1.5rem;
   }
-  .join-form form{
-    display:block;
+  
+  /* HOME PAGE GRID LAYOUT */
+  .home-grid {
+    grid-template-areas: 
+      "hero"
+      "cards";
+    grid-template-rows: auto auto;
   }
-  .join-form label{ display:block; margin-top:0.75rem; font-weight:600; }
-  .join-form input, .join-form textarea{ width:100%; padding:.5rem; border:1px solid #ddd; border-radius:6px; margin-top:.25rem; }
+  
+  .hero-grid {
+    grid-area: hero;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem 0;
+  }
+  
+  .hero-content h2 {
+    margin: 0 0 1rem 0;
+    color: var(--primary);
+    font-size: 2rem;
+  }
+  
+  .cta-buttons {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .hero-image img {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 8px;
+    display: block;
+  }
+  
+  .info-cards-grid {
+    grid-area: cards;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  
+  .info-card {
+    border: 1px solid #eee;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #fafafa;
+  }
+  
+  /* ABOUT PAGE GRID LAYOUT */
+  .about-main-grid {
+    grid-template-areas: 
+      "hero"
+      "committee";
+    grid-template-rows: auto auto;
+  }
+  
+  .about-hero-grid {
+    grid-area: hero;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem 0;
+  }
+  
+  .about-content h2 {
+    margin: 0 0 1rem 0;
+    color: var(--primary);
+  }
+  
+  .about-content ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+  
+  .about-image img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .committee-grid {
+    grid-area: committee;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  .committee-card {
+    border: 1px solid #eee;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #fafafa;
+    text-align: center;
+  }
+  
+  /* TEAMS PAGE GRID LAYOUT */
+  .teams-main-grid {
+    grid-template-areas: 
+      "title"
+      "teams";
+    grid-template-rows: auto 1fr;
+  }
+  
+  .section-title-grid {
+    grid-area: title;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  
+  .teams-grid {
+    grid-area: teams;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .team-card-grid {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--card-bg);
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    min-height: 150px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+  }
+  .team-card-grid:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+  }
+  
+  .team-image img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .team-info {
+    padding: 1rem;
+    display: grid;
+    align-content: center;
+    gap: 0.5rem;
+  }
+  
+  /* EVENTS PAGE - Enhanced Grid Layout */
+  .events-main-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+  
+  .events-list{ 
+    background:transparent; 
+  }
+  
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .event-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1rem;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .event-date {
+    display: grid;
+    grid-template-rows: auto auto;
+    text-align: center;
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 6px;
+    min-width: 60px;
+    align-content: center;
+  }
+  
+  .event-date .day {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .event-date .month {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+  
+  .event-details {
+    display: grid;
+    gap: 0.25rem;
+  }
+  
+  .event-details h3 {
+    margin: 0;
+    color: var(--primary);
+  }
+  
+  .event-details p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  .sidebar{ 
+    background:#fafafa; 
+    padding:1rem; 
+    border-radius:8px; 
+  }
+  
+  .results-grid {
+    display: grid;
+    gap: 0.5rem;
+  }
+  
+  .result-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    padding: 0.5rem;
+    background: white;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent);
+  }
+  
+  .result.won { color: #22c55e; font-weight: bold; }
+  .result.runner { color: #f59e0b; font-weight: bold; }
+  .result.semi { color: #6b7280; font-weight: bold; }
+  
+  /* GALLERY - Advanced Grid for photos */
+  .gallery-main {
+    display: grid;
+    grid-template-areas: 
+      "header"
+      "photos";
+    gap: 2rem;
+  }
+  
+  .gallery-header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .gallery-filters {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 0.5rem;
+  }
+  
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-btn.active,
+  .filter-btn:hover {
+    background: var(--primary);
+    color: white;
+  }
+  
+  .photo-grid {
+    grid-area: photos;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: minmax(250px, auto);
+    gap: 1.5rem;
+  }
+  
+  .photo {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .photo:hover {
+    transform: translateY(-5px);
+  }
+  
+  .photo-container {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+  }
+  
+  .photo img{ 
+    width:100%; 
+    height:100%; 
+    object-fit:cover; 
+    display:block; 
+    transition: transform 0.3s ease;
+  }
+  
+  .photo:hover img {
+    transform: scale(1.05);
+  }
+  
+  .photo-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(11, 77, 145, 0.8);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0 0 0 8px;
+    font-size: 0.8rem;
+  }
+  
+  .photo figcaption {
+    padding: 1rem;
+    background: white;
+    font-weight: 500;
+    color: var(--primary);
+  }
+  
+  /* CONTACT GRID - Enhanced layout */
+  .contact-main-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:2rem;
+  }
+  
+  .contact-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .contact-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    background: #fafafa;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+  }
+  
+  .contact-icon {
+    font-size: 1.5rem;
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+  }
+  
+  .contact-content h3 {
+    margin: 0 0 0.25rem 0;
+    color: var(--primary);
+    font-size: 1rem;
+  }
+  
+  .contact-content p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .form-row {
+    display: grid;
+    gap: 0.5rem;
+  }
+  
+  .form-row.full-width {
+    grid-column: 1 / -1;
+  }
+  
+  .join-form label{ 
+    font-weight:600; 
+    color: var(--primary);
+  }
+  .join-form input, 
+  .join-form textarea,
+  .join-form select{ 
+    width:100%; 
+    padding:.75rem; 
+    border:2px solid #ddd; 
+    border-radius:6px; 
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .join-form input:focus,
+  .join-form textarea:focus,
+  .join-form select:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+  
+  .join-form select {
+    background: white;
+    cursor: pointer;
+  }
   
   /* FOOTER GRID */
   .footer-grid{
+    grid-area: footer;
     width:100%;
     max-width:var(--maxw);
     padding:1rem;
@@ -87,15 +522,95 @@
     gap:1rem;
   }
   
-  /* small helpers */
-  .btn{ display:inline-block; background:var(--primary); color:white; text-decoration:none; padding:.5rem .8rem; border-radius:6px; }
-  .download{ display:inline-block; color:var(--primary); text-decoration:none; }
-  
-  /* RESPONSIVE - collapse columns */
-  @media (max-width:1000px){
-    .main-grid{ grid-template-columns: 1fr; }
-    .contact-grid{ grid-template-columns: 1fr; }
-    .nav-grid{ display:none; } /* hide nav for small widths (simple approach) */
-    .footer-grid{ grid-template-columns: 1fr; text-align:center; }
+  /* Button styles */
+  .btn{ 
+    display:inline-block; 
+    background:var(--primary); 
+    color:white; 
+    text-decoration:none; 
+    padding:.6rem .9rem; 
+    border-radius:6px; 
+    border: 0;
+    text-align: center;
+  }
+  .btn.ghost{ 
+    background:transparent; 
+    color:var(--primary); 
+    border:1px solid var(--primary); 
+  }
+  .download{ 
+    display:inline-block; 
+    color:var(--primary); 
+    text-decoration:none; 
+  }
+  .small-link{ 
+    color:var(--primary); 
+    text-decoration:none; 
+    font-size:.95rem; 
   }
   
+  /* RESPONSIVE DESIGN - Advanced Grid Responsiveness */
+  @media (max-width:1000px){
+    .main-grid{ 
+      grid-template-columns: 1fr; 
+    }
+    .contact-main-grid{ 
+      grid-template-columns: 1fr; 
+    }
+    .hero-grid,
+    .about-hero-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .teams-grid {
+      grid-template-columns: 1fr;
+    }
+    .team-card-grid {
+      grid-template-columns: 1fr;
+    }
+    .team-image {
+      height: 200px;
+    }
+    .nav-grid{ 
+      display:none; 
+    }
+    .footer-grid{ 
+      grid-template-columns: 1fr; 
+      text-align:center; 
+    }
+    .cta-buttons {
+      grid-auto-flow: row;
+      justify-content: center;
+    }
+    .gallery-header {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .gallery-filters {
+      justify-content: center;
+    }
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width:600px){
+    .info-cards-grid,
+    .committee-grid,
+    .contact-details-grid {
+      grid-template-columns: 1fr;
+    }
+    .gallery-main .photo-grid {
+      grid-template-columns: 1fr;
+    }
+    .events-grid {
+      grid-template-columns: 1fr;
+    }
+    .event-card {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .event-date {
+      justify-self: center;
+    }
+  }

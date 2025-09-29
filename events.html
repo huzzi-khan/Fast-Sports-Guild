@@ -13,7 +13,7 @@
     <header class="header-grid">
       <div class="brand-grid">
         <!-- CHANGE: logo -->
-        <img src="images/logo.png" alt="FAST Sports Guild logo" class="logo-grid">
+        <img src="images/logo.jpg" alt="FAST Sports Guild logo" class="logo-grid">
         <div>
           <!-- CHANGE: title -->
           <h1>FAST Sports Guild</h1>
@@ -31,46 +31,134 @@
       </nav>
     </header>
 
-    <!-- MAIN GRID LAYOUT: event list + sidebar -->
-    <main class="main-grid">
+    <!-- MAIN GRID LAYOUT: Enhanced Grid with template areas -->
+    <main class="main-grid events-main-grid">
       <section class="events-list">
         <h2>Upcoming Events</h2>
 
-        <article class="event">
-          <h3>Cricket vs UMT</h3>
-          <!-- CHANGE: date -->
-          <p>Date: Oct 3, 2025 — 4:00 PM</p>
-          <!-- CHANGE: venue -->
-          <p>Venue: Main Ground</p>
-        </article>
+        <div class="events-grid">
+          <article class="event-card">
+            <div class="event-date">
+              <span class="day">03</span>
+              <span class="month">OCT</span>
+            </div>
+            <div class="event-details">
+              <h3>Cricket vs UMT</h3>
+              <p><strong>Time:</strong> 4:00 PM</p>
+              <p><strong>Venue:</strong> Main Ground</p>
+              <p><strong>Type:</strong> Inter-University</p>
+            </div>
+          </article>
 
-        <article class="event">
-          <h3>Football Friendly</h3>
-          <p>Date: Oct 10, 2025 — 6:00 PM</p>
-          <p>Venue: Football Field</p>
-        </article>
+          <article class="event-card">
+            <div class="event-date">
+              <span class="day">10</span>
+              <span class="month">OCT</span>
+            </div>
+            <div class="event-details">
+              <h3>BOB 2025 - Battle of Batches</h3>
+              <p><strong>Time:</strong> 6:00 PM</p>
+              <p><strong>Venue:</strong> FAST NUCES Futsal Ground</p>
+              <p><strong>Type:</strong> Annual Futsal Tournament</p>
+            </div>
+          </article>
 
-        <article class="event">
-          <h3>Inter-College Badminton</h3>
-          <p>Date: Nov 1, 2025 — 10:00 AM</p>
-          <p>Venue: Sports Hall</p>
-        </article>
+          <article class="event-card">
+            <div class="event-date">
+              <span class="day">01</span>
+              <span class="month">NOV</span>
+            </div>
+            <div class="event-details">
+              <h3>Inter-College Badminton</h3>
+              <p><strong>Time:</strong> 10:00 AM</p>
+              <p><strong>Venue:</strong> Sports Hall</p>
+              <p><strong>Type:</strong> Tournament</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-date">
+              <span class="day">15</span>
+              <span class="month">NOV</span>
+            </div>
+            <div class="event-details">
+              <h3>Men's Volleyball vs NUST</h3>
+              <p><strong>Time:</strong> 2:00 PM</p>
+              <p><strong>Venue:</strong> FAST NUCES Volleyball Court</p>
+              <p><strong>Result:</strong> FAST Victory - 3 consecutive sets 🏆</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-date">
+              <span class="day">22</span>
+              <span class="month">NOV</span>
+            </div>
+            <div class="event-details">
+              <h3>Rugby vs NUST</h3>
+              <p><strong>Time:</strong> 4:00 PM</p>
+              <p><strong>Venue:</strong> Rugby Field</p>
+              <p><strong>Type:</strong> Inter-University</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-date">
+              <span class="day">30</span>
+              <span class="month">NOV</span>
+            </div>
+            <div class="event-details">
+              <h3>Basketball Tournament</h3>
+              <p><strong>Time:</strong> 6:00 PM</p>
+              <p><strong>Venue:</strong> Basketball Court</p>
+              <p><strong>Type:</strong> Tournament</p>
+            </div>
+          </article>
+        </div>
       </section>
 
       <aside class="sidebar">
         <div class="panel">
           <h4>Download Fixtures</h4>
-          <!-- CHANGE: link to fixtures pdf -->
           <a href="#" class="download">Download PDF (fixtures)</a>
         </div>
 
         <div class="panel">
           <h4>Past Results</h4>
-          <ul>
-            <li>Volleyball: Won Cup</li>
-            <li>Table Tennis: Runners-up</li>
-            <li>Cricket: Semifinals</li>
-          </ul>
+          <div class="results-grid">
+            <div class="result-item">
+              <span class="sport">Women's Volleyball - NCA Khel Tamasha</span>
+              <span class="result won">Champions 2024</span>
+            </div>
+            <div class="result-item">
+              <span class="sport">Men's Volleyball vs NUST</span>
+              <span class="result won">Victory - 3 consecutive sets</span>
+            </div>
+            <div class="result-item">
+              <span class="sport">Basketball - NCA Tournament '23</span>
+              <span class="result won">Champions 🏆</span>
+            </div>
+            <div class="result-item">
+              <span class="sport">Rugby - HEC Tournament</span>
+              <span class="result won">Brilliant Performance</span>
+            </div>
+            <div class="result-item">
+              <span class="sport">Cricket</span>
+              <span class="result semi">Semifinals</span>
+            </div>
+            <div class="result-item">
+              <span class="sport">BOB 2024 - Football (Futsal)</span>
+              <span class="result won">REVENANT FC - Winners</span>
+            </div>
+            <div class="result-item">
+              <span class="sport">BOB 2024 - Runners-up</span>
+              <span class="result runner">CHANNA FC - Runners-up</span>
+            </div>
+            <div class="result-item">
+              <span class="sport">Badminton</span>
+              <span class="result won">Won Trophy</span>
+            </div>
+          </div>
         </div>
       </aside>
     </main>
